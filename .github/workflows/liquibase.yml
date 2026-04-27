@@ -22,4 +22,4 @@ jobs:
           url: ${{ secrets.DB_URL }}
           username: ${{ secrets.DB_USER }}
           password: ${{ secrets.DB_PASS }}
-          classpath: postgresql.jar
+          classpath: /github/workspace:/github/workspace/postgresql.jar
