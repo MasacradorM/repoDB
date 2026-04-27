@@ -1,0 +1,37 @@
+databaseChangeLog:
+
+  - changeSet:
+      id: create-users
+      author: oscar
+      changes:
+        - sqlFile:
+            path: create_users.sql
+            relativeToChangelogFile: true
+      rollback:
+        - sqlFile:
+            path: ../../05_rollbacks/01_ddl/03_tables/create_users.rollback.sql
+            relativeToChangelogFile: true
+
+  - changeSet:
+      id: create-products
+      author: oscar
+      changes:
+        - sqlFile:
+            path: create_products.sql
+            relativeToChangelogFile: true
+      rollback:
+        - sqlFile:
+            path: ../../05_rollbacks/01_ddl/03_tables/create_products.rollback.sql
+            relativeToChangelogFile: true
+
+  - changeSet:
+      id: create-orders
+      author: oscar
+      changes:
+        - sqlFile:
+            path: create_orders.sql
+            relativeToChangelogFile: true
+      rollback:
+        - sqlFile:
+            path: ../../05_rollbacks/01_ddl/03_tables/create_orders.rollback.sql
+            relativeToChangelogFile: true

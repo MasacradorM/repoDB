@@ -1,0 +1,22 @@
+name: Liquibase Migration
+
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  migrate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Run Liquibase
+        uses: liquibase/liquibase-github-action@v4
+        with:
+          operation: update
+          changeLogFile: changelog.yaml
+          url: ${{ secrets.DB_URL }}
+          username: ${{ secrets.DB_USER }}
+          password: ${{ secrets.DB_PASS }}
