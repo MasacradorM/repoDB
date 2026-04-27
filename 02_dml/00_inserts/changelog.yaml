@@ -5,7 +5,7 @@ databaseChangeLog:
       author: oscar
       changes:
         - sqlFile:
-            path: sql/insert_users.sql
+            path: 00_inserts/insert_users.sql
             relativeToChangelogFile: true
       rollback:
         - sqlFile:
@@ -17,7 +17,7 @@ databaseChangeLog:
       author: oscar
       changes:
         - sqlFile:
-            path: sql/insert_products.sql
+            path: 00_inserts/insert_products.sql
             relativeToChangelogFile: true
       rollback:
         - sqlFile:
@@ -29,7 +29,7 @@ databaseChangeLog:
       author: oscar
       changes:
         - sqlFile:
-            path: sql/insert_orders.sql
+            path: 00_inserts/insert_orders.sql
             relativeToChangelogFile: true
       rollback:
         - sqlFile:
