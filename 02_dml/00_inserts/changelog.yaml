@@ -1,38 +1,31 @@
+# ✅ Correcto
 databaseChangeLog:
-
   - changeSet:
       id: insert-users
       author: oscar
       changes:
         - sqlFile:
-            path: 00_inserts/insert_users.sql
-            relativeToChangelogFile: true
+            path: 02_dml/00_inserts/insert_users.sql
       rollback:
         - sqlFile:
-            path: ../../05_rollbacks/02_dml/00_inserts/insert_users.rollback.sql
-            relativeToChangelogFile: true
+            path: 05_rollbacks/02_dml/00_inserts/insert_users.rollback.sql
 
   - changeSet:
       id: insert-products
       author: oscar
       changes:
         - sqlFile:
-            path: 00_inserts/insert_products.sql
-            relativeToChangelogFile: true
+            path: 02_dml/00_inserts/insert_products.sql
       rollback:
         - sqlFile:
-            path: ../../05_rollbacks/02_dml/00_inserts/insert_products.rollback.sql
-            relativeToChangelogFile: true
+            path: 05_rollbacks/02_dml/00_inserts/insert_products.rollback.sql
 
   - changeSet:
       id: insert-orders
       author: oscar
       changes:
         - sqlFile:
-            path: 00_inserts/insert_orders.sql
-            relativeToChangelogFile: true
+            path: 02_dml/00_inserts/insert_orders.sql
       rollback:
         - sqlFile:
-            path: ../../05_rollbacks/02_dml/00_inserts/insert_orders.rollback.sql
-            relativeToChangelogFile: true
-            
+            path: 05_rollbacks/02_dml/00_inserts/insert_orders.rollback.sql
