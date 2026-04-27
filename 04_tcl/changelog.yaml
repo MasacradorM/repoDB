@@ -1,7 +1,6 @@
 databaseChangeLog:
   - include:
-      file: 00_transaction_blocks/changelog.yaml
-      relativeToChangelogFile: true
+      file: 04_tcl/00_transaction_blocks/changelog.yaml
+
   - include:
-      file: 01_manual_recoveries/changelog.yaml
-      relativeToChangelogFile: true
+      file: 04_tcl/01_manual_recoveries/changelog.yaml

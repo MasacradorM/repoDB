@@ -1,31 +1,30 @@
  databaseChangeLog:
   - include:
-      file: 00_extensions/changelog.yaml
-      relativeToChangelogFile: true
+      file: 01_ddl/00_extensions/changelog.yaml
+
   - include:
-      file: 01_schemas/changelog.yaml
-      relativeToChangelogFile: true
+      file: 01_ddl/01_schemas/changelog.yaml
+
   - include:
-      file: 02_types/changelog.yaml
-      relativeToChangelogFile: true
+      file: 01_ddl/02_types/changelog.yaml
+
   - include:
-      file: 03_tables/changelog.yaml
-      relativeToChangelogFile: true
+      file: 01_ddl/03_tables/changelog.yaml
+
   - include:
-      file: 04_views/changelog.yaml
-      relativeToChangelogFile: true
+      file: 01_ddl/04_views/changelog.yaml
+
   - include:
-      file: 05_materialized_views/changelog.yaml
-      relativeToChangelogFile: true
+      file: 01_ddl/05_materialized_views/changelog.yaml
+
   - include:
-      file: 06_functions/changelog.yaml
-      relativeToChangelogFile: true
+      file: 01_ddl/06_functions/changelog.yaml
+
   - include:
-      file: 07_procedures/changelog.yaml
-      relativeToChangelogFile: true
+      file: 01_ddl/07_procedures/changelog.yaml
+
   - include:
-      file: 08_triggers/changelog.yaml
-      relativeToChangelogFile: true
+      file: 01_ddl/08_triggers/changelog.yaml
+
   - include:
-      file: 09_indexes/changelog.yaml
-      relativeToChangelogFile: true
+      file: 01_ddl/09_indexes/changelog.yaml
