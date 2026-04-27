@@ -1,6 +1,6 @@
 databaseChangeLog:
   - include:
-      file: 04_tcl/00_transaction_blocks/changelog.yaml
+      file: 04_tcl/00_transactions_blocks/changelog.yaml
 
   - include:
       file: 04_tcl/01_manual_recoveries/changelog.yaml
