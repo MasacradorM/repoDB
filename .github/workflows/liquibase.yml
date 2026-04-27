@@ -18,7 +18,7 @@ jobs:
         uses: liquibase/liquibase-github-action@v4
         with:
           operation: update
-          changeLogFile: changelog.yaml
+          changeLogFile: changelog_master.yaml
           url: ${{ secrets.DB_URL }}
           username: ${{ secrets.DB_USER }}
           password: ${{ secrets.DB_PASS }}
