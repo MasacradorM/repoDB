@@ -1,5 +1,4 @@
 name: Liquibase Migration
-
 on:
   push:
     branches: [ main ]
@@ -7,10 +6,13 @@ on:
 jobs:
   migrate:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
+
+      - name: Download PostgreSQL Driver
+        run: |
+          wget -q https://jdbc.postgresql.org/download/postgresql-42.7.3.jar -O postgresql.jar
 
       - name: Run Liquibase
         uses: liquibase/liquibase-github-action@v4
@@ -20,3 +22,4 @@ jobs:
           url: ${{ secrets.DB_URL }}
           username: ${{ secrets.DB_USER }}
           password: ${{ secrets.DB_PASS }}
+          classpath: postgresql.jar
