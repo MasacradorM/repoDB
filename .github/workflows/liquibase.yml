@@ -4,17 +4,36 @@ on:
     branches: [ main ]
 
 jobs:
-  migrate:
+  status:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
 
       - name: Download PostgreSQL Driver
-        run: |
-          wget -q https://jdbc.postgresql.org/download/postgresql-42.7.3.jar -O postgresql.jar
+        run: wget -q https://jdbc.postgresql.org/download/postgresql-42.7.3.jar -O postgresql.jar
 
-      - name: Run Liquibase
+      - name: Liquibase Status
+        uses: liquibase/liquibase-github-action@v4
+        with:
+          operation: status
+          changeLogFile: changelog_master.yaml
+          url: ${{ secrets.DB_URL }}
+          username: ${{ secrets.DB_USER }}
+          password: ${{ secrets.DB_PASS }}
+          classpath: /github/workspace:/github/workspace/postgresql.jar
+
+  migrate:
+    runs-on: ubuntu-latest
+    needs: status
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Download PostgreSQL Driver
+        run: wget -q https://jdbc.postgresql.org/download/postgresql-42.7.3.jar -O postgresql.jar
+
+      - name: Liquibase Update
         uses: liquibase/liquibase-github-action@v4
         with:
           operation: update
